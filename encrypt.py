@@ -213,3 +213,7 @@ class FileHider(Functions):
         else:
             containerPaths.append(self.askFile(text='The file you wish to clear'), multiple=True)
         for containerPath in containerPaths: self.clean(containerPath=containerPath)
+
+            
+if __name__ == "__main__":
+    pass
