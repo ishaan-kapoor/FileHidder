@@ -14,3 +14,5 @@ Supported image formats are:
   * Only after adding `encrypt.py` to site packages
   * OR
   * Keeping `encrypt.py` in the same directory as the file it is imported in.
+* For using it as a standalone script replace `pass` inside the `main` function with the name of the function corresponding to your desired task.
+  * `python encrypt.py`
