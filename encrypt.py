@@ -110,7 +110,7 @@ class RawTools(GUI):
         file.close()
 
     def checkEndBytes(self, path, virginity=False, index=False):
-        endBytes = self.terminalBytes[path.split('.')[-1]]
+        endBytes = self.terminalBytes[path.split('.')[-1]][-1]
         if not endBytes:
             self.showMessage('Sorry, We do not suppport containers with this file extention')
             return False
@@ -154,7 +154,7 @@ class Functions(RawTools):
             return file.write(data)
 
     def hideFile(self, dataPath, containerPath, keyWord):
-        temp = self.checkEndBytes(virginity=True)
+        temp = self.checkEndBytes(containerPath, virginity=True)
         if not temp: return False
         if not temp.get('virginity'):
             self.showMessage('Sorry, either the file already has some data in it or it has been truncated')
@@ -216,4 +216,5 @@ class FileHider(Functions):
 
             
 if __name__ == "__main__":
-    pass
+    f = FileHider()
+    f.reveal()
